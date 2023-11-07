@@ -1,4 +1,4 @@
-import { Layout } from "antd"
+import { Layout } from 'antd'
 const { Content } = Layout
 
 type ContentLayoutProps = {

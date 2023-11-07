@@ -1,8 +1,8 @@
-import { useMutation } from "@tanstack/react-query"
-import { defaultApiActionFn } from "@utils/axios"
+import { useMutation } from '@tanstack/react-query'
+import { defaultApiActionFn } from '@utils/axios'
 
-import { MutationOptionsType, MutationResultType } from "../@types/react-query"
-import { User } from "../validations/user.validations"
+import { MutationOptionsType, MutationResultType } from '../@types/react-query'
+import { User } from '../validations/user.validations'
 
 export default function useUserMutation(
   options?: MutationOptionsType<User>,
@@ -10,7 +10,7 @@ export default function useUserMutation(
   return useMutation({
     mutationFn: ({ id, data }) =>
       defaultApiActionFn<User>({
-        url: "/users",
+        url: '/users',
         id,
         data,
       }),

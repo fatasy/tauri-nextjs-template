@@ -1,5 +1,5 @@
-import api from "@services/api"
-import { AxiosRequestConfig } from "axios"
+import api from '@services/api'
+import { AxiosRequestConfig } from 'axios'
 
 type DefaultApiQueryFnParams<R> = AxiosRequestConfig<R> & {
   query?: string | number
@@ -11,7 +11,7 @@ export const defaultApiQueryFn = async <R>({
   query,
   ...config
 }: DefaultApiQueryFnParams<R>): Promise<R> => {
-  const { data } = await api<R>(url.concat(query ? `/${query}` : "/"), config)
+  const { data } = await api<R>(url.concat(query ? `/${query}` : '/'), config)
   return data
 }
 
@@ -25,8 +25,8 @@ export const defaultApiActionFn = async <R>({
   id,
   ...config
 }: DefaultApiActionFn<R>): Promise<R> => {
-  return api(url.concat(query ? `/${query}` : ""), {
-    method: id ? "PUT" : "POST",
+  return api(url.concat(query ? `/${query}` : ''), {
+    method: id ? 'PUT' : 'POST',
     ...config,
   })
 }

@@ -1,5 +1,5 @@
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
 export const UserZodScheme = z.object({
   id: z.number().optional(),

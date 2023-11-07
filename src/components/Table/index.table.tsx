@@ -1,5 +1,5 @@
-import { Table as AntTable, type TableProps as AntTableProps } from "antd"
-import { AnyObject } from "antd/es/_util/type"
+import { Table as AntTable, type TableProps as AntTableProps } from 'antd'
+import { AnyObject } from 'antd/es/_util/type'
 
 export type TableProps<RecordType> = AntTableProps<RecordType>
 

@@ -1,11 +1,14 @@
-import { useQuery } from "@tanstack/react-query"
-import { defaultApiQueryFn } from "@utils/axios"
+import { useQuery } from '@tanstack/react-query'
+import { defaultApiQueryFn } from '@utils/axios'
 
-import { UseQueryOptionsWithId, UseQueryOptionsWithQuery } from "../@types/react-query"
-import { User } from "../validations/user.validations"
+import {
+  UseQueryOptionsWithId,
+  UseQueryOptionsWithQuery,
+} from '../@types/react-query'
+import { User } from '../validations/user.validations'
 
-const USER_QUERY_KEY = "user"
-const USERS_QUERY_KEY = USER_QUERY_KEY.concat("s")
+const USER_QUERY_KEY = 'user'
+const USERS_QUERY_KEY = USER_QUERY_KEY.concat('s')
 const API_USER_URL = USERS_QUERY_KEY
 
 export function useUserQuery({ id, ...options }: UseQueryOptionsWithId<User>) {
@@ -20,7 +23,10 @@ export function useUserQuery({ id, ...options }: UseQueryOptionsWithId<User>) {
   })
 }
 
-export function useUsersQuery({ query, ...options }: UseQueryOptionsWithQuery<User[]>) {
+export function useUsersQuery({
+  query,
+  ...options
+}: UseQueryOptionsWithQuery<User[]>) {
   return useQuery({
     queryKey: [USERS_QUERY_KEY, query],
     queryFn: () =>

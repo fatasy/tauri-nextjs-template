@@ -1,10 +1,10 @@
-import axios from "axios"
-import * as next from "next"
-import { parseCookies } from "nookies"
+import axios from 'axios'
+import * as next from 'next'
+import { parseCookies } from 'nookies'
 
-import { AUTH_TOKEN_NAME } from "../constants/auth.constants"
+import { AUTH_TOKEN_NAME } from '../constants/auth.constants'
 export function getAPIClient(
-  ctx?: Pick<next.NextPageContext, "req"> | null | undefined,
+  ctx?: Pick<next.NextPageContext, 'req'> | null | undefined,
 ) {
   const { [AUTH_TOKEN_NAME]: token } = parseCookies(ctx)
 

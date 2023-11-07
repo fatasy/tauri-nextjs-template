@@ -1,4 +1,4 @@
-import { Layout } from "antd"
+import { Layout } from 'antd'
 
 type LayoutProps = {
   children: React.ReactNode

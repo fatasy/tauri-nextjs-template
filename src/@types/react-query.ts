@@ -2,15 +2,15 @@ import {
   UseMutationOptions,
   UseMutationResult,
   UseQueryOptions,
-} from "@tanstack/react-query"
-import { AxiosError } from "axios"
+} from '@tanstack/react-query'
+import { AxiosError } from 'axios'
 
 type IdParam = number
 type QueryParam = number
 
 export type UseQueryOptionsType<R> = Omit<
   UseQueryOptions<R, AxiosError>,
-  "queryKey" | "queryFn"
+  'queryKey' | 'queryFn'
 >
 
 export type UseQueryOptionsWithId<R> = {

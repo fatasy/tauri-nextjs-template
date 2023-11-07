@@ -1,5 +1,6 @@
 import Layout from '@/layouts/Default'
-function Home() {
+
+export default function CashRegisterPage() {
   return (
     <Layout>
       <Layout.Sidebar />
@@ -13,5 +14,3 @@ function Home() {
     </Layout>
   )
 }
-
-export default Home

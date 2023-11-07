@@ -1,4 +1,4 @@
-import { Layout } from "antd"
+import { Layout } from 'antd'
 
 type MainLayoutProps = {
   children: React.ReactNode

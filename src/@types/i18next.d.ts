@@ -1,7 +1,7 @@
-import { defaultNS, fallbackNS } from "../i18n"
-import resources from "./resources"
+import { defaultNS, fallbackNS } from '../i18n'
+import resources from './resources'
 
-declare module "i18next" {
+declare module 'i18next' {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface CustomTypeOptions {
     defaultNS: typeof defaultNS

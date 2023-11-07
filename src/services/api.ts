@@ -1,4 +1,4 @@
-import { getAPIClient } from "./axios"
+import { getAPIClient } from './axios'
 
 const api = getAPIClient()
 

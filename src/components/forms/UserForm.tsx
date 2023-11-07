@@ -1,9 +1,9 @@
-import { FormItem } from "@components/FormItem"
-import { Button, DatePicker, Form, Input } from "antd"
-import { useForm } from "react-hook-form"
+import { FormItem } from '@components/FormItem'
+import { Button, DatePicker, Form, Input } from 'antd'
+import { useForm } from 'react-hook-form'
 
-import { FormType } from "@/@types/form.types"
-import { User, UserFormValidation } from "@/validations/user.validations"
+import { FormType } from '@/@types/form.types'
+import { User, UserFormValidation } from '@/validations/user.validations'
 
 export default function UserForm({ data, onSubmit }: FormType<User>) {
   const { control, handleSubmit } = useForm<User>({
