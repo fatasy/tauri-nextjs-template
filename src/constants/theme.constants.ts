@@ -1,10 +1,16 @@
 export const colors = {
-  primary: '#1890ff',
+  primary: '#003049',
   white: '#ffffff',
-  background: '#252836',
+  background: '##ffffff',
   surface: '#2a2f3d',
-  error: '#ff4d4f',
-  warning: '#faad14',
-  success: '#52c41a',
-  info: '#1890ff',
-}
+} as const
+
+type T = keyof typeof colors
+
+export const colorsAntDesign = (Object.keys(colors) as T[]).reduce(
+  (acc, key) => ({
+    ...acc,
+    ['color'.concat(key.toUpperCase())]: colors[key],
+  }),
+  {},
+)

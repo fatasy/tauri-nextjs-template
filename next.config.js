@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    typedRoutes: true,
+  },
   images: {
     unoptimized: true,
   },
-  output: "export",
-  experimental: {
-    typedRoutes: true,
+  compiler: {
+    styledComponents: true,
   },
 }
 

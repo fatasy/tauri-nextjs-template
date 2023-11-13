@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Your Name Here",
-    "email": "your-email-here@example.com"
+    "name": "Fatasy",
+    "email": "marcelo.fatasy@hotmail.com"
   },
   "scripts": {
     "next-start": "cross-env BROWSER=none next dev",
@@ -13,21 +13,23 @@
     "build": "tauri build",
     "dev": "tauri dev",
     "lint": "next lint",
-    "prepare": "husky install",
     "i18next-toc": "i18next-resources-for-ts toc -i src/i18n/locales/en -o src/@types/resources.d.ts"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.2",
     "@ant-design/icons": "^5.2.6",
+    "@auth/core": "^0.18.0",
     "@hookform/resolvers": "^3.3.2",
     "@tanstack/react-query": "^5.4.3",
+    "@tanstack/react-query-devtools": "^5.8.2",
+    "@tanstack/react-query-next-experimental": "^5.8.2",
     "@tauri-apps/api": "^1.5.1",
     "antd": "^5.10.3",
     "axios": "^1.6.0",
-    "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "i18next": "^23.6.0",
     "next": "^14.0.1",
+    "next-auth": "5.0.0-beta.2",
     "next-i18next": "^15.0.0",
     "nookies": "^2.5.2",
     "react": "^18.2.0",

@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SF Pro Text";
-  src: url("../../public/fonts/SF-Pro-Text/SF-Pro-Text-Medium.otf") format("opentype");
+  font-family: 'SF Pro Text';
+  src: url('/fonts/SF-Pro-Text/SF-Pro-Text-Medium.otf') format('opentype');
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "SF Pro Text";
+}
+
+a {
+  color: inherit !important;
 }

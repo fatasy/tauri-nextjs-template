@@ -1,0 +1,1190 @@
+{
+	"info": {
+		"_postman_id": "02c40c90-4b15-4e5d-9480-154d9814b0c9",
+		"name": "AUTH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30204560"
+	},
+	"item": [
+		{
+			"name": "auth-api",
+			"item": [
+				{
+					"name": "localhost:8080/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"123\",\r\n    \"pos\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/auth/register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjk1ODQ0ODc4fQ.WsO2r01hLGkfKNZELP3t2RQ1RI0feaCWz0pFMj4lZEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"teste1\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PDV360 - oauth2",
+			"item": [
+				{
+					"name": "http://localhost:8080/oauth2/jwks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/oauth2/jwks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth2",
+								"jwks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/oauth2/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client-id-user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "default"
+								},
+								{
+									"key": "scope",
+									"value": "profile",
+									"type": "default"
+								},
+								{
+									"key": "client_id",
+									"value": "client-server",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_secrete",
+									"value": "secret",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pos_id",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/oauth2/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/oauth2/token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "default"
+										},
+										{
+											"key": "scope",
+											"value": "write",
+											"type": "default"
+										},
+										{
+											"key": "client_id",
+											"value": "client-server",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "client_secrete",
+											"value": "secret",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/oauth2/token",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Oct 2023 12:43:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQtaWQtdXNlciIsImF1ZCI6ImNsaWVudC1pZC11c2VyIiwibmJmIjoxNjk2ODU1NDM1LCJzY29wZSI6WyJ3cml0ZSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJleHAiOjE2OTY4NTcyMzUsImlhdCI6MTY5Njg1NTQzNX0.OoO2DR25T1JGF89p0s1VUiL3aq2pyWX2SI2dq4pYOtbuL8MLVpT9tPol4811ZAgnT5AuzWGAfM2OXxngnFWsOawehNhWjxlWCRgZ9CRpo5rs2xJ0tJMdg7bn8LovGcRfuTExyALapQdsoiIdkmaPvogN3HLyeAz5lMUUS7IMdETNfv3tJdqg-xFLJ6gab2P0feMXNLR-4qMXwRX9G0lhp3fYMsIJT6lFojsdpWnMmAUoJ2ZtNcrqSmcL7yxj-Fp1VLXhobga8Pwm2pVvvtIYMNcxrP5EcdyqQdFxaee9_k73UL31x6TpnZCfy2ipqxNtDOgvxgg2S97KUEFbH1u1HA\",\n    \"scope\": \"write\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 1799\n}"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/oauth2/authorize?response_type=code&client_id=client-id-user&state=teste&redirect_uri=https://oidcdebugger.com/debug&scope=openid",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/oauth2/authorize?response_type=code&client_id=client-id-front&state=teste&redirect_uri=https://oidcdebugger.com/debug&scope=openid",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "client_id",
+									"value": "client-id-front"
+								},
+								{
+									"key": "state",
+									"value": "teste"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://oidcdebugger.com/debug"
+								},
+								{
+									"key": "scope",
+									"value": "openid"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CODE localhost:8080/oauth2/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client-id-front",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "default"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "default"
+								},
+								{
+									"key": "code",
+									"value": "bmRZ6jvvS_yr4nP7tZM6miCr9YQXcpDSddE0VcQwFc4EjETmbDkZatxg1eL_Ql-bgRTFkcEpePaw9JcD7u0RFPYGdA1f5851SThqeG2CQv14oy6W-Z4FcBR1C_Zoqnsw",
+									"type": "default"
+								},
+								{
+									"key": "client_id",
+									"value": "client-id-user",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "123456",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://oidcdebugger.com/debug",
+									"type": "default"
+								},
+								{
+									"key": "pos_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/oauth2/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CODE localhost:8080/oauth2/token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "default"
+										},
+										{
+											"key": "scope",
+											"value": "write",
+											"type": "default"
+										},
+										{
+											"key": "code",
+											"value": "usLn9_1AOb9bY_-TJLCVOzVtNAon0b8GB3TIztsFeUzqhMJ1alZhqD74jR5OHZNvHtdMcE3wBlWrgbueN_NF34XIedRDKYMY8r5Hxa_EeDarRuDwS-JyLfTbQ2bnjQz0",
+											"type": "default"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://oidcdebugger.com/debug",
+											"type": "default"
+										},
+										{
+											"key": "client_id",
+											"value": "awuser",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "client_secret",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/oauth2/token",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Oct 2023 12:46:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJuYmYiOjE2OTY4NTU2MDAsInNjb3BlIjpbIndyaXRlIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY5Njg1NzQwMCwiaWF0IjoxNjk2ODU1NjAwfQ.FFYNi31nLPNqQyhmSS4cmiUGKsjxzhMmo7pViQVaH3ZvkeTTh7NyeAyZzZ9JYQ6_D3aqccyImJenX-1JkAdcEH3_S6XbPYO9eyTPmS79j-i3uXFTbFbXU3Sshhqyn3GdhQAqnfoiNofze3jehqX-X-QTwCK6R6DjWycwag7qBdJAjiH7woBQOp90lDildTcxS9fR_kpoZDIIc_xtlPOv4esNkCFGu7OhWTedx43Nj4jPacwZHGriKcu07T2ib8dwOx_-yUM7p9BNfOwkJ8lY2z8G4kO5wDJ_TtsUWx2lJgr_yse5KAna5c73MvYx9vvGwqOeOMHfu0zwUIq_IFyTUw\",\n    \"refresh_token\": \"QYgYriMdBb1ZgXeh5LC-qCv5jk5Y-IDZCVW96SXTFtDckmY9joQrS9_Xs-VEciZqeZ3p0PRxXvQTKWr7tc-69o8mV_bTzFokiAL6o8f2mTe7efhiw2zU6YtnzqgZWaYj\",\n    \"scope\": \"write\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 1800\n}"
+						}
+					]
+				},
+				{
+					"name": "REFRESH localhost:8080/oauth2/token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client-id-front",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "default"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "refresh_token",
+									"value": "BnhSYG4B2Uppq_-eFFHVkRBcRfIcKVOGjyhAgk2gE_hf3KSyU29h23LuClytYxP6ZuikNPBV8SG5fmwZz2vLiPQtpwo374P_cFzJn7i9Jg9CMf5s-tCtLAe9KQ1lm8Vi",
+									"type": "default"
+								},
+								{
+									"key": "client_id",
+									"value": "client-id-user",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "123456",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://oidcdebugger.com/debug",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "pos_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/oauth2/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REFRESH localhost:8080/oauth2/token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "default"
+										},
+										{
+											"key": "scope",
+											"value": "openid",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "refresh_token",
+											"value": "UDYcUaafJZyVV7ZBopEp658G989brKHOqmOjxO_qfzoaqkBfhBnZbHg4JaKXdmz68ZorO_5L_t1S78n0C_iG0isLoAGwSV644LOQ45nA65VNB2Tsi2EyezNiwRHBW0Tq",
+											"type": "default"
+										},
+										{
+											"key": "client_id",
+											"value": "client-id-user",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "client_secret",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://oidcdebugger.com/debug",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/oauth2/token",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Oct 2023 20:22:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJuYmYiOjE2OTY5NjkzMzksInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJleHAiOjE2OTY5NzExMzksImlhdCI6MTY5Njk2OTMzOX0.DMHBj8UhfCNEbCBDXV5Qd9ryzc376Bnkc3HDSQJvLRovogeVzyW65BTazYDQqyyp9iA1tjWe4C0jgTVzPw0ObR4bVr9ZlCWg89U9N59L4YZ1mN8Exmncx80Oq-MY9BENbqOkuGSxeDHgkdUKuiZS037cgLaz3kvb2gQ3D_tcH8JYG0vY-FTlsLqMycxMKdRfWB4gf5rRtCmEmPvbAXooPywdTo8FSSf0mo0Kzmhhag9dk7P5ZULhS6fve42Js0ZiHrvYglDwn-7wntdRUk69ZLowykTYFVW4_Ta9-N7ah7qhz0V-jdj2Bw6NapDl1NFPpuS6nAU_Dr5_fT74YhKVcQ\",\n    \"refresh_token\": \"wOOAKjM8oR8zXKXfdKYw6i9pKhk0zDZsXq6kdxRsr8VNenXDOF0ORzdJ3T9JIc3EKa_ns0fm2E5PkLuwE2JxGIKUENGpYTR7Ad8DzeCjB8A-waDdEh4TidmGAPW7u8XT\",\n    \"scope\": \"openid\",\n    \"id_token\": \"eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJhenAiOiJjbGllbnQtaWQtdXNlciIsImF1dGhfdGltZSI6MTY5Njk2Nzk3NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiZXhwIjoxNjk2OTcxMTM5LCJpYXQiOjE2OTY5NjkzMzksInNpZCI6IkZpcWgyMGFOcGI3UUJPWWtOMDd6ZkI3VU9VTTlsY0xQa25OblVfY01DUlEifQ.exY6vNC3UCnc8txJ0NlshQ0q0hP_hLUmQ1GNEQ414KZBbmEVIMYevuqHn-8hQIvvD5W0L1BpXgZOy15qqDrryiSRM3fao0LmWajcjAjA0owuLQDb2Pa4HSSmUAr4FHa4pPXaMidRb_-xvGk4m5p1ZLY00Fj1XQ4hB53kdxBDcvO4p8a5J1kkprDXYbVcNQKth4ta1HpZMwqTDD8Yl-_LjREv42FRrT3ubqBLX1myAS_XTeT_B3ETC30V9r8TMFnOaOl61dVbraj7ftKenZRIuclntiUeYYR2T4ZLXcOUDT2VHVGRZzAn4uhW3pT5Jj48Do5bIx7tqktgaPJdDO93xw\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 1800\n}"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/oauth2/introspect",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client-id-front",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6Ii1YbjVCOWI3OElPRzVYemlzV0IzS2hSdWdEVHNpVEVEZ2s3RDhYYzc2M00iLCJraWQiOiJwZHYzNjAiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoiY2xpZW50LWlkLWZyb250IiwibmJmIjoxNjk5NDU1MDg2LCJ1c2VyX2lkIjoiMSIsInBvc19pZCI6IjEiLCJ1c2VyX25hbWUiOiJVc3VhcmlvIFBEViIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAiLCJleHAiOjE2OTk0NTY4ODYsImlhdCI6MTY5OTQ1NTA4NiwiYXV0aG9yaXRpZXMiOltdfQ.DS26q3hdDMT0nOw2p9QFw20gFK2T6ljH_r_IQddP2WL0OHW9t_Adataz0qnPJ2qJp_aPA12GizJ6T8pyNwKcWnJyXzjNv2MoMcFIpx_TllBCQayKwHlNuctvTHes8BtnScTWVSQeepuL3prIjW-_2Y0zLzhHFxnqgTiBUDRKvWHGv95CLJoo4Fu-qXxPSuDV4NzMR7AQ85pOhAdz-Zx1MK-mUnqumO-lroPyxtfcugFjfhsSSshP6-vELAGpHaDNdISm30eb8HDZe5UzTV1T1VvnS87NOWxJj-0cYXOoGnp7OfJsYTIlXPwbJFDdMrfpTZco8pqvKoyzQOdzrMvI9g",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/oauth2/introspect",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/oauth2/introspect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "token",
+											"value": "eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJuYmYiOjE2OTY4NTU2MDAsInNjb3BlIjpbIndyaXRlIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY5Njg1NzQwMCwiaWF0IjoxNjk2ODU1NjAwfQ.FFYNi31nLPNqQyhmSS4cmiUGKsjxzhMmo7pViQVaH3ZvkeTTh7NyeAyZzZ9JYQ6_D3aqccyImJenX-1JkAdcEH3_S6XbPYO9eyTPmS79j-i3uXFTbFbXU3Sshhqyn3GdhQAqnfoiNofze3jehqX-X-QTwCK6R6DjWycwag7qBdJAjiH7woBQOp90lDildTcxS9fR_kpoZDIIc_xtlPOv4esNkCFGu7OhWTedx43Nj4jPacwZHGriKcu07T2ib8dwOx_-yUM7p9BNfOwkJ8lY2z8G4kO5wDJ_TtsUWx2lJgr_yse5KAna5c73MvYx9vvGwqOeOMHfu0zwUIq_IFyTUw",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/oauth2/introspect",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"oauth2",
+										"introspect"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Oct 2023 12:47:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"active\": true,\n    \"sub\": \"user@user.com\",\n    \"aud\": [\n        \"client-id-user\"\n    ],\n    \"nbf\": 1696855600,\n    \"scope\": \"write\",\n    \"iss\": \"http://localhost:8080\",\n    \"exp\": 1696857400,\n    \"iat\": 1696855600,\n    \"client_id\": \"client-id-user\",\n    \"token_type\": \"Bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/oauth2/revoke",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client-id-front",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6Ii1YbjVCOWI3OElPRzVYemlzV0IzS2hSdWdEVHNpVEVEZ2s3RDhYYzc2M00iLCJraWQiOiJwZHYzNjAiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoiY2xpZW50LWlkLWZyb250IiwibmJmIjoxNjk5Mzc4MjAzLCJ1c2VyX2lkIjoiMSIsInBvc19pZCI6IjEiLCJ1c2VyX25hbWUiOiJVc3VhcmlvIFBEViIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAiLCJleHAiOjE2OTkzODAwMDMsImlhdCI6MTY5OTM3ODIwMywiYXV0aG9yaXRpZXMiOltdfQ.VTahy71XtIuXMhlnIziB0oZSepra0-xDbrDUYrAjcRwVH72F8l1YdrBzp0_TlW9QrIFS2fn0BH_vbhvyngLzDotBDjWJ1QTgmyWw_aqNSvmnXqS-EX-rCHlMM-xJdp_R34UknOncv6-xxKXO_s-phy4YtOXmJyfr-uHPeHJCBhlcxE2XET27t0KEUuaAxLye1ehYfXoGiL-9f1iRyhldD8asfGwgHRy20haIhSX7aSEY4n6Z74_2vpXeYAtEXsTM6tW1N0mHN3Cv6XJfkOl1gXYBRp5gL1-hbLZOzlvCaO-Bb1JdfxLiuukC-oH3YlZKSJpKMN0jvR7nsomPl9YMkQ",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/oauth2/revoke",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oauth2",
+								"revoke"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/oauth2/introspect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "token",
+											"value": "eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJuYmYiOjE2OTY4NTU2MDAsInNjb3BlIjpbIndyaXRlIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImV4cCI6MTY5Njg1NzQwMCwiaWF0IjoxNjk2ODU1NjAwfQ.FFYNi31nLPNqQyhmSS4cmiUGKsjxzhMmo7pViQVaH3ZvkeTTh7NyeAyZzZ9JYQ6_D3aqccyImJenX-1JkAdcEH3_S6XbPYO9eyTPmS79j-i3uXFTbFbXU3Sshhqyn3GdhQAqnfoiNofze3jehqX-X-QTwCK6R6DjWycwag7qBdJAjiH7woBQOp90lDildTcxS9fR_kpoZDIIc_xtlPOv4esNkCFGu7OhWTedx43Nj4jPacwZHGriKcu07T2ib8dwOx_-yUM7p9BNfOwkJ8lY2z8G4kO5wDJ_TtsUWx2lJgr_yse5KAna5c73MvYx9vvGwqOeOMHfu0zwUIq_IFyTUw",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/oauth2/introspect",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"oauth2",
+										"introspect"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Oct 2023 12:47:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"active\": true,\n    \"sub\": \"user@user.com\",\n    \"aud\": [\n        \"client-id-user\"\n    ],\n    \"nbf\": 1696855600,\n    \"scope\": \"write\",\n    \"iss\": \"http://localhost:8080\",\n    \"exp\": 1696857400,\n    \"iat\": 1696855600,\n    \"client_id\": \"client-id-user\",\n    \"token_type\": \"Bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/api/example",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/example",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"example"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/example/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6Ii1YbjVCOWI3OElPRzVYemlzV0IzS2hSdWdEVHNpVEVEZ2s3RDhYYzc2M00iLCJraWQiOiJwZHYzNjAiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsImF1ZCI6ImNsaWVudC1pZC1mcm9udCIsIm5iZiI6MTY5OTM4NDkxNSwidXNlcl9pZCI6IjIiLCJwb3NfaWQiOiIyIiwidXNlcl9uYW1lIjoiVXN1YXJpbzIgUERWIiwic2NvcGUiOlsib3BlbmlkIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MCIsImV4cCI6MTY5OTM4NjcxNSwiaWF0IjoxNjk5Mzg0OTE1LCJhdXRob3JpdGllcyI6W119.PM3-Zjs6tN71RF2ct9u1T-Tf4vnffO0q9tVAppXc3zr0gXT8U1vy4baZwcwkrTGYIYgwn4vngppOsvIGuqYwYwQC_EutLJ2NFTBYxh1iCU_zKb_JMXjA7hnyyCBSEKYvyFqQoDg-oLCkaf8dZgHx3cI4ZoIjGcEuXkICFsB3JnA5lHPtXNJiaiEJ5eWMQQwY9DnroyfqVzS7sh9XTn6fonDvyvssB1VinG5nw-C2WPugsZG49DmMOT9Pe29iQ1odahr0E1h76ojcP_o69IwGJQuz-J_w47qcttq-6cEe4WrlSTPYiB1yPNylQUYNruqC7Tcg9kg1OR4REVN4MMBgaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/example/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"example",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/example/admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6Ii1YbjVCOWI3OElPRzVYemlzV0IzS2hSdWdEVHNpVEVEZ2s3RDhYYzc2M00iLCJraWQiOiJwZHYzNjAiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoiY2xpZW50LWlkLWZyb250IiwibmJmIjoxNjk5MzY1MTgyLCJ1c2VyX2lkIjoiMSIsInBvc19pZCI6IjEiLCJ1c2VyX25hbWUiOiJVc3VhcmlvIFBEViIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAiLCJleHAiOjE2OTkzNjY5ODIsImlhdCI6MTY5OTM2NTE4MiwiYXV0aG9yaXRpZXMiOltdfQ.I_jSXqz7ZJj-O0vPnEzDZrh4e33HqBeCfYJL8gbYR-csfIHUxMEVbo2tE3GgUnSQHjtNeGzpoMuKPWLnu9XmTr2I5KML4ztPl3oIAdPylTgHEREPLjiXwGd-xO5mzXtqVFtYg_llVCDiJ_sUTuKitVs1Mf3twScaKJYBMY8wbV9ci4dA4a3hcI5LFgHAXRbdt-rtpdc2SSWpzRyBJF3KIrOoL5v7ldIxRai-P6q6RFLs954x-pl12CNOMV1NCrgImO42L1nyptdNZD905BWkEUEaKksKukn31ny2wL7_HsbeHrpyGFLn08OI5EMDLDWVNodxJrHaaNDT0QXIfa47dQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/example/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"example",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/example/revoke-auth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6Ii1YbjVCOWI3OElPRzVYemlzV0IzS2hSdWdEVHNpVEVEZ2s3RDhYYzc2M00iLCJraWQiOiJwZHYzNjAiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoiY2xpZW50LWlkLWZyb250IiwibmJmIjoxNjk5Mzc5MzI0LCJ1c2VyX2lkIjoiMSIsInBvc19pZCI6IjEiLCJ1c2VyX25hbWUiOiJVc3VhcmlvIFBEViIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAiLCJleHAiOjE2OTkzODExMjQsImlhdCI6MTY5OTM3OTMyNCwiYXV0aG9yaXRpZXMiOltdfQ.XxZLHov33oC9Remiwms7pRmmLo9TefDHxft4wodOzDBPYPJytr5v_CV5hrMxYGBC3uIFFN3CMepHvbK0BWAnWJ4jyV6uYvym9LUaNeHKQgfgiEkpXgDEmEKDNuK_OZmvz71jOYaAbWUzqARRacR_GnzmGfE7OjW6NADigcGNw61LZ3R9F2HuKvK5JGtVxreOEYkBMr1lAFHZjUKu3BxFKGFGukVD_4ZgYzIz13PPt5ZmhkNvQ6kJUHA4Dx4B_tKUH4rdtcwaRcpp08reYt7gpFctdh_Ju_89zLEi-QQCAh2u9yR_SQI_7qTE2G0QWDfnRjdskReltBJ7-05OaJDAUA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/example/revoke-auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"example",
+								"revoke-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "oauth2-luigi",
+			"item": [
+				{
+					"name": "localhost:8082/resource/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ4NXQjUzI1NiI6IkZpd1dvTWRpTmNZUFJmb3gxQU9lRGozSklFUTNIbU1QM0dZSnM0TE9GMFUiLCJraWQiOiJvYXV0aDJwb2MiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyQHVzZXIuY29tIiwiYXVkIjoiY2xpZW50LWlkLXVzZXIiLCJuYmYiOjE2OTc1NzM2NzksInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoidXNlciIsInNjb3BlIjpbIm9wZW5pZCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJleHAiOjE2OTc1NzU0NzksImlhdCI6MTY5NzU3MzY3OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJwZHZfaWQiOiIxMjMifQ.G8S8FLEoH4hohIiL0_EyGShkyF61xaC-k9HKxZC7dYGqaOBxFt7MtoMkChWwjCP6NlrBsLC8Kx7RbtisO0JMPS-npzOoyhJ1mSPqf2top_iQz5T33QhLOhvB9K0DXatuhIlSOtNAONvkHZhf0SoxNx4j2w3QDKEv_vDXLn9forz4VwwycTtnjgqSZ8lSAVg0I05W_w_LBGYE35oF_c8PvNJcxsjGDlgfcrC7g5012fpEO2_oVZuC8Ky8X5-AwkTj5AnHuo7ccfFbbRDVqojE0Fi6cFRyR0QALAIYItwNfkBsLh0ZVI67QawUNNjQBUZ-PwRfeHg2akfRi9PVRgyw2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/resource/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"resource",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

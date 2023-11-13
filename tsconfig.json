@@ -1,25 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": [
-      "es2015",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
+    "target": "esnext",
     "module": "esnext",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -42,14 +46,23 @@
       ],
       "@styles/*": [
         "src/styles/*"
+      ],
+      "@auth": [
+        "src/auth"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "*.js",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
