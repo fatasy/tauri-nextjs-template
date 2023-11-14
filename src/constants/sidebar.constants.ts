@@ -1,6 +1,6 @@
 import { IoDiscOutline, IoStorefront } from 'react-icons/io5'
 
-import { ItemSidebarType } from '@/components/layouts/Default/Sidebar/Item.sidebar'
+import { ItemSidebarType } from '@/layouts/Main/Sidebar/Item.sidebar'
 
 export const MAIN_SIDEBAR_ITEMS: ItemSidebarType[] = [
   {

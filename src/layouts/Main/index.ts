@@ -1,6 +1,6 @@
 import { AsideLayout } from './Aside'
 import { ContentLayout } from './Content.layout'
-import { HeaderLayout } from './Header.layout'
+import { HeaderLayout } from './Header'
 import { DefaultLayout } from './layout.root'
 import { MainLayout } from './Main'
 import { SidebarLayout } from './Sidebar'

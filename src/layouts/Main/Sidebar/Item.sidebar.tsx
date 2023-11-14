@@ -36,10 +36,11 @@ export function ItemSidebar({
 }
 
 const styles = tv({
-  base: 'p-4 mb-4 rounded hover:bg-[#003049] hover:text-white',
+  base: 'p-4 mb-4 rounded hover:bg-primary hover:text-white',
   variants: {
     active: {
-      true: 'bg-[#003049] text-white',
+      true: 'bg-primary text-white',
+      false: 'text-primary',
     },
   },
   defaultVariants: {

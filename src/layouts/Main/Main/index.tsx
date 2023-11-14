@@ -5,5 +5,7 @@ type MainLayoutProps = {
 }
 
 export function MainLayout({ children }: MainLayoutProps) {
-  return <Layout className="mx-6 !bg-inherit">{children}</Layout>
+  return (
+    <Layout className=" !bg-inherit !h-screen mx-0 px-4">{children}</Layout>
+  )
 }

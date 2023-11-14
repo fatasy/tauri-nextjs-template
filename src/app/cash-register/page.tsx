@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { FaBoxOpen } from 'react-icons/fa6'
 
-import Layout from '@/components/layouts/Default'
+import Layout from '@/layouts/Main'
 
 export default function CashRegisterPage() {
   return (

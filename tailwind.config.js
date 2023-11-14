@@ -3,9 +3,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1890ff',
+        primary: '#003049',
         background: '#252836',
         surface: '#1F1D2B',
+        lightBlue: '#008ED8',
       },
       fontFamily: {
         sf: ['Inter', 'SF Pro Text'],

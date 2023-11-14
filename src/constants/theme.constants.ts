@@ -1,16 +1,18 @@
+import { ThemeConfig } from 'antd'
+
 export const colors = {
   primary: '#003049',
   white: '#ffffff',
-  background: '##ffffff',
+  background: '#FAFAFA',
   surface: '#2a2f3d',
-} as const
+  lightBlue: '#008ED8',
+}
 
-type T = keyof typeof colors
-
-export const colorsAntDesign = (Object.keys(colors) as T[]).reduce(
-  (acc, key) => ({
-    ...acc,
-    ['color'.concat(key.toUpperCase())]: colors[key],
-  }),
-  {},
-)
+export const theme = {
+  token: {
+    colorPrimary: colors.primary,
+    colorBgBase: colors.background,
+    borderRadius: 4,
+    borderRadiusLG: 4,
+  },
+} as ThemeConfig
